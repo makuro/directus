@@ -56,6 +56,15 @@ abstract class Base implements Node
     }
 
     /**
+     * @param self $child
+     */
+    public function addChild($child)
+    {
+        $child->parent($this);
+        $this->_children[] = $child;
+    }
+
+    /**
      * Returns the node key
      * @return string
      */
